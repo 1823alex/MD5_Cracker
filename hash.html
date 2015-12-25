@@ -2,50 +2,131 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>MD5 Cracker</title>
   <meta charset="utf-8" />
-  <style>
-    body {
-      font-family: monospace;
-    }
-    .log {
-      border: 1px solid gray;
-      width: 400px;
-      height: 80px;
-      overflow-y: scroll;
-      margin-bottom: 20px;
-    }
-    .status {
-      color: green;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="hashmain.css">
+  <link rel="stylesheet" type="text/css" href="hashmin.css">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-  <div id="main" class="status"></div>
-  <div id="mainlog" class="log"></div>
-  <div id="worker0" class="status"></div>
-  <div id="worker0log" class="log"></div>
-  <div id="worker1" class="status"></div>
-  <div id="worker1log" class="log"></div>
-  <div id="worker2" class="status"></div>
-  <div id="worker2log" class="log"></div>
-  <div id="worker3" class="status"></div>
-  <div id="worker3log" class="log"></div>
-  <div id="worker4" class="status"></div>
-  <div id="worker4log" class="log"></div>
-  <div id="worker5" class="status"></div>
-  <div id="worker5log" class="log"></div>
-  <div id="worker6" class="status"></div>
-  <div id="worker6log" class="log"></div>
-  <div id="worker7" class="status"></div>
-  <div id="worker7log" class="log"></div>
-  
+  <div id="navbar"></div>
+    <ul id="nav">
+            <!--<li id="navitem"><a href="/index.html">Home</a></li>-->
+            <li id="navitem"><a href="/index.html">Status</a></li>
+            <li id="navitem"><a href="/work.html">Work</a></li>
+            <li id="navitem"><a href="/about.html">About</a></li>
+            <li id="navitem"><a href="/hash.html">MD5</a></li>
+    </ul>
+  </div>
+  <h1 style="color:#ecf0f1"> .</h1>
+<div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="panel panel-primary">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Main Log</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="main" class="status"></div><div id="mainlog" class="mainlog"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 1</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker0" class="status"></div><div id="worker0log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 2</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker1" class="status"></div><div id="worker1log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 3</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker2" class="status"></div><div id="worker2log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 4</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker3" class="status"></div><div id="worker3log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 5</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker4" class="status"></div><div id="worker4log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 6</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker5" class="status"></div><div id="worker5log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 7</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker6" class="status"></div><div id="worker6log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-info">
+                   <div class="panel-heading">
+                       <h3 class="panel-title">Worker 8</h3>
+                   </div>
+                   <ul class="list-group diff">
+                       <li class="list-group-item"><div id="worker7" class="status"></div><div id="worker7log" class="log"></div></li>
+                   </ul>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">What is this page?</h3>
+              </div>
+              <ul class="list-group diff">
+                <li class="list-group-item"><p>This page is to host my science project and be an example of how quickly a computer could crack a password that is stored in an MD5 hash. An MD5 hash is how some passwords are stored even though it is extremely insecure, but companies don't think it's worth it to upgrade their infrastructures and keep user's passwords safe.</p></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+</div>
 
   <script src="md5.js"></script>
   <script src="chars.js"></script>
-
   <script src="coordinator.js"></script>
-
 </body>
 </html>

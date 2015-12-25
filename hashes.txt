@@ -1,0 +1,16 @@
+Hashes that can be cracked in a reasonable amount of time
+Admin-e3afed0047b08059d0fada10f400c1e5
+Root-fa03eb688ad8aa1db593d33dabd89bad
+root-63a9f0ea7bb98050796b649e85481845
+Bears-ffa3a425ce66e9897483960c58549bc5
+bears-f1d2aa173a8d6c348c30a936adc21264
+Alex-a08372b70196c21a9229cf04db6b7ceb
+alex-534b44a19bf18d20b71ecc4eb77c572f
+Honda-844c56840b5fc26d414cf238381a5f1a
+honda-2ab3343875e56dc0a15cbb6a98570cf2
+Kia-603b0796acdf7554ec3a6126736b8ae3
+kia-ab99f8f1c87bb63eee8ddc8688ce329f
+Ikea-824288febd036fbef39a274b325fe48b
+ikea-fe1164dcc2e55b6b92995e4fc3b353c6
+
+qwerty-d8578edf8458ce06fbc5bb76a58c5ca4

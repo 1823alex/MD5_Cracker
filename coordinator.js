@@ -1,14 +1,14 @@
-var numWorkers = 8 // NOTE: can't set this to be more than 8 without fixing the way numbers are carried
+var numWorkers = 8
 var workers = []
 var startTime = +new Date
 
 for (var i = 0; i < numWorkers; i++) {
 
-  // Create worker
+
   var worker = new Worker('worker.js')
   workers.push(worker)
 
-  // Message handler
+
   worker.addEventListener('message', function (e) {
     switch (e.data.cmd) {
       case "status":
@@ -24,7 +24,7 @@ for (var i = 0; i < numWorkers; i++) {
         break
 
       case "foundPassword":
-        log("FOUND PASSWORD: " + e.data.data)
+        log("Password Found: " + e.data.data)
 
         var totalTime = (+new Date - startTime) / 1000
         log("TOTAL TIME: " + totalTime + " seconds")
@@ -32,7 +32,7 @@ for (var i = 0; i < numWorkers; i++) {
         workers.forEach(function(worker) {
           worker.terminate()
         })
-        log("Terminated all workers.")
+        log("All Workers Have Been Terminated.")
         break
 
       default:
@@ -48,14 +48,14 @@ for (var i = 0; i < numWorkers; i++) {
 
   // Set worker settings
   worker.postMessage({ cmd: "setWorkerId", data: i })
-  worker.postMessage({ cmd: "setMaxPassLength", data: 5 })
-  worker.postMessage({ cmd: "setPassToCrack", data: "901f79ad7d10d346f34bd38e575867c6" })
+  worker.postMessage({ cmd: "setMaxPassLength", data: 10 })
+  worker.postMessage({ cmd: "setPassToCrack", data: "d8578edf8458ce06fbc5bb76a58c5ca4" })
 
   // Start worker
   worker.postMessage({ cmd: "performCrack", data: {start: i, hop: numWorkers} })
 }
 
-status("Searching for password match for hash '54d75975e615f0638b6181592a4d929f'.")
+status("Searching for password match for hash 'd8578edf8458ce06fbc5bb76a58c5ca4'.")
 log("Testing uppercase, lowercase, and numbers.")
 
 
@@ -72,8 +72,8 @@ function addCommasToInteger(x) {
 
 function status(msg, workerId) {
   var prefix = workerId != null
-    ? "Worker " + workerId + " status: "
-    : "Main page status: "
+    ? "Worker " + workerId + " Status: "
+    : "! "
 
   var selector = workerId != null
     ? "#worker" + workerId
@@ -85,7 +85,7 @@ function status(msg, workerId) {
 function log(msg, workerId) {
   var prefix = workerId != null
     ? "Worker " + workerId + " says: "
-    : "Main page says: "
+    : " # "
 
   var fragment = document.createDocumentFragment();
   fragment.appendChild(document.createTextNode(prefix + msg));

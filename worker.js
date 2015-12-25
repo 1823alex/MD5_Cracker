@@ -1,11 +1,9 @@
 importScripts('md5.js', 'chars.js')
 
-// Cracking settings
 var workerId
   , maxPassLength = undefined
   , passToCrack = undefined
 
-// Timer variables
 var interval = 100000
   , count = 0
   , startTime = +new Date
@@ -40,7 +38,6 @@ function crack(options) {
     numBefore = view[length - 1]
     num = (view[length - 1] += hop)
 
-    // Skip over whole "skip ranges", like they don't exist
     if (numBefore < skip1_from && num >= skip1_from) {
       view[length - 1] = skip1_to + (num - skip1_from)
     
@@ -48,17 +45,13 @@ function crack(options) {
       view[length - 1] = skip2_to + (num - skip2_from)
     }
 
-    // Check if we need to carry any numbers
-    // Check from right to left
     for (var i = length - 1; i >= 0; --i) {
 
       if (view[i] >= to) {    
-        // need to carry
 
         view[i] = (view[i] % to) + from
 
         if (i == 0) {
-          // need to add a new "place" to the left
 
           length += 1
           view = bufView.subarray(maxPassLength - length)
@@ -68,11 +61,9 @@ function crack(options) {
             return
 
         } else {
-          // need to carry a number to the left "place"
+
           num = (view[i - 1] += 1)
 
-          // Skip over whole "skip ranges" for everything but
-          // the "ones place"
           if (num == skip1_from) {
             num = (view[i - 1] = skip1_to)
           }
@@ -84,7 +75,6 @@ function crack(options) {
       }
     }
 
-    // Timer stuff
     count += 1
     if (count % interval == 0) {
       this.postMessage({ cmd: "setRate", data: interval / ((new Date - startTime) / 1000), id: workerId })
