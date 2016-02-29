@@ -415,72 +415,6 @@
     -webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
     box-shadow:inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1)
 }
-#nav {
-	display:block;
-	list-style-type: none;
-	margin:auto;
-	padding:auto;
-	text-align:center;
-	width:300px;
-	text-decoration:none;
-	font-family:sans-serif;
-}
-#works {
-	margin: auto;
-    width: 96%;
-	position:absolute;
-	top:125px;
-}
-ul#nav
-    {
-    margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-	position: fixed;
-    top: 7px;
-    }
-    li#navitem
-    {
-    display:inline;
-    }
-    li#navitem a:link,a:visited {
-    font-weight: bold;
-    color: #fff;
-    background-color: #27AE60;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-li#navitem a:hover {
-    color: #fff;
-    background: #2980B9;
-}
-#navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:60px;
-background-color:#34495e;
-}
-.diff{
-    list-style:none;
-    padding-left:0;
-}
-
-.list-group-item > a{
-    color:#2980b9;
-}
-
-.list-group-item > ul >li > a{
-    color:#2980b9;
-}
-div#navbar, ul#nav {
-  z-index:100;
-}
 body {
   font-family: sans-serif;
 }
@@ -501,38 +435,21 @@ body {
   color: #2980b9;
   font-weight: bold;
 }
-ul#nav
-{
-margin: 0 auto;
-padding-top: 11px;
-padding-bottom: 15px;
-padding-left: 10px;
-padding-right: 10px;
-position: fixed;
-top: 7px;
+.active {
+    border: 2px solid rgba(51,122,183,1);
+    background-color: rgba(51,122,183,0.2);
 }
-li#navitem
-{
-display:inline;
+
+#options {
+  margin-right: 40px;
+  float: right;
 }
-li#navitem a:link,a:visited {
-font-weight: bold;
-color: #fff;
-background-color: #27AE60;
-text-align: center;
-padding: 10px;
-text-decoration: none;
-text-transform: capitalize;
+
+#top {
+  margin-left: 40px;
+  float: left;
 }
-li#navitem a:hover {
-color: #fff;
-background: #2980B9;
-}
-#navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:60px;
-background-color:#34495e;
+
+.form-inline .form-group {
+  display: inline-block;
 }
